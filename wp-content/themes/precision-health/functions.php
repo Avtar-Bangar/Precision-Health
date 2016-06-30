@@ -669,7 +669,7 @@ function create_Service_taxonomies() {
 
 /*      modality custom post         */
 
-add_action( 'init', 'Service' );
+add_action( 'init', 'Modality' );
 
 function Modality() {
 	$labels = array(
@@ -708,3 +708,79 @@ function Modality() {
 	register_post_type( 'modality', $args );
 }
 add_action( 'init', 'Modality' );
+
+
+
+
+/*  custom post of Service    */
+
+
+add_action( 'init', 'ConditionsTreated' );
+
+function ConditionsTreated() {
+	$labels = array(
+		'name'               => __( 'Conditions Treated' ),
+		'singular_name'      => __( 'All Conditions Treated Post' ),
+		'menu_name'          => __( 'Conditions Treated post'),
+		'name_admin_bar'     => __( 'Conditions Treated'),
+		'add_new'            => __( 'Add New' ),
+		'add_new_item'       => __( 'Add New Conditions Treated post' ),
+		'new_item'           => __( 'New Conditions Treated post'),
+		'edit_item'          => __( 'Edit Conditions Treated post'),
+		'view_item'          => __( 'View Conditions Treated post'),
+		'all_items'          => __( 'All Conditions Treated post'),
+		'search_items'       => __( 'Search Conditions Treated post'),
+		'parent_item_colon'  => __( 'Parent Conditions Treated post:'),
+		'not_found'          => __( 'No Conditions Treated post found.'),
+		'not_found_in_trash' => __( 'No Conditions Treated post found in Trash.')
+	);
+
+	$args = array(
+		'labels'             => $labels,
+        'description'        => __( 'Description.'),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'ctreated' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'thumbnail', )
+	);
+
+	register_post_type( 'ctreated', $args );
+}
+
+add_action( 'init', 'create_ConditionsTreated_taxonomies', 0 );
+
+
+function create_ConditionsTreated_taxonomies() {
+	
+	$labels = array(
+		'name'              => _x( 'Category Treated', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Category Treated', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Category' ),
+		'all_items'         => __( 'All Category' ),
+		'parent_item'       => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item'         => __( 'Edit Category' ),
+		'update_item'       => __( 'Update Category' ),
+		'add_new_item'      => __( 'Add New Category' ),
+		'new_item_name'     => __( 'New Category Name' ),
+		'menu_name'         => __( 'Category' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'CTCatagory' ),
+	);
+
+	register_taxonomy( 'CTCatagory', ctreated, $args );
+}
