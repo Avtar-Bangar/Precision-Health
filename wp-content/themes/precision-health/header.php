@@ -39,8 +39,8 @@
 
                 <div class="top-bar-right">
                     <ul>
-                        <li><i class="fa fa-mobile" aria-hidden="true"></i><b> Call <a href="tel:715-386-8757">352-474-8 </a> LAB</b></li>
-                        <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@abc.com">Send us an email</a></li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i><b> Call <a href="tel:<?php the_field('phone',11); ?>"><?php the_field('phone',11); ?></a> LAB</b></li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:<?php the_field('reception-email',11); ?>">Send us an email</a></li>
 
                     </ul>
                 </div>
@@ -55,24 +55,37 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="<?php echo esc_url(get_template_directory_uri());?>/images/logo.png" class="img-responsive"></a>
+					<?php	$image=get_post_meta(9,"site-logo",true);
+						$thumb = wp_get_attachment_image_src($image, 'full' );
+					  ?>
+                    <a class="navbar-brand" href="<?php echo site_url(); ?>"><img src="<?php echo $url = $thumb['0'];?>" class="img-responsive"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li class="dropdown"><a href="about-us.html">About Us</a> <span class="caret dropdown-toggle" data-toggle="dropdown"></span>
-                            <ul class="dropdown-menu">
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="affiliations.html">Affiliations</a></li>
-                                <li><a href="why-precision-health.html">Why Precision-Health</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="#">New Patients</a></li>
-                        <li><a href="#">Conditions Treated</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="online-store.html">Online Store</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
+
+						<?php
+
+						$defaults = array(
+						'theme_location'  => '',
+						'menu'            => 'header-menu',
+						'container'       => '',
+						'container_class' => '',
+						'container_id'    => '',
+						'menu_class'      => 'menu',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '%3$s',
+						'depth'           => 0,
+						'walker'          => ''
+						);
+						wp_nav_menu( $defaults );
+						?> 
+						
                     </ul>
 
                 </div>

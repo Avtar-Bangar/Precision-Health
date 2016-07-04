@@ -347,7 +347,6 @@ header .navbar-right .dropdown-menu {
 .banner-text-cvr {
     position: absolute;
     top: 50%;
-    width: 100%;
     left: 15px;
     right: 15px;
     transform: translateY(-50%);
@@ -685,23 +684,22 @@ header .navbar-right .dropdown-menu {
     position: relative;
     background: #fcfcfc;
     text-align: center;
+    position: relative;
 }
 
-.neck-comp-left-img-cvr {
+.neck-comp-left:after{
     position: absolute;
     top: 15px;
     bottom: 15px;
     left: 15px;
     right: 0px;
     border: solid 3px #efefef;
+    content: "";
 }
 
-.neck-comp-cvr .neck-comp-left img {
-    width: 100%;
-    height: 100%;
-    max-width: 900px;
-    display: inline-block;
-    margin: 0 auto;
+.neck-comp-cvr .neck-comp-left .con-couple-cvr{
+    margin-top: 0;
+    max-width: 830px;
 }
 
 .neck-comp-cvr .neck-comp-right {
@@ -710,7 +708,7 @@ header .navbar-right .dropdown-menu {
     vertical-align: middle;
     position: relative;
     background: #11a3e0;
-    height: 1000px;
+    height: 880px;
 }
 
 .neck-comp-cvr .neck-comp-right:before {
@@ -728,10 +726,12 @@ header .navbar-right .dropdown-menu {
 .neck-comp-right-inner {
     position: absolute;
     top: 50%;
-    left: 108px;
-    width: 325px;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
+    left: 50%;
+    width: 100%;
+    max-width: 70%;
+    height: 750px;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
 }
 
 .neck-comp-cvr .neck-comp-right h1 {
@@ -785,6 +785,14 @@ header .navbar-right .dropdown-menu {
     text-transform: uppercase;
     margin: 20px 0 10px;
     font-weight: 700;
+}
+
+.team-carousel .item .item-inner h3 a{
+    color: #222222;
+}
+
+.team-carousel .item .item-inner h3 a:hover, .team-carousel .item .item-inner h3 a:focus{
+    color: #11a3e0;
 }
 
 .team-carousel .item .item-inner p{
@@ -1456,7 +1464,7 @@ footer p {
 .about-main{
     position: relative;
     width: 100%;
-    background: #f9f9f9  url("../images/about-doc-img.jpg") no-repeat right center;
+    /**background: #f9f9f9  url("../images/about-doc-img.jpg") no-repeat right center;**/
     padding: 50px 0 30px;
     background-size: auto 100%;
 }
@@ -1487,6 +1495,14 @@ footer p {
     margin-bottom: 15px;
     font-weight: 400;
     line-height: 1.6;
+}
+
+.about-main-text p a{
+    color: #444444;
+}
+
+.about-main-text p a:hover, .about-main-text p a:focus{
+    color: #11a3e0;
 }
 
 .about-main-text .about-tag-line{
@@ -1601,6 +1617,14 @@ footer p {
     font-weight: 700;
     text-transform: capitalize;
     margin-bottom: 15px;
+}
+
+.team-item-text h2 a{
+    color: #222222;
+}
+
+.team-item-text h2 a:hover, .team-item-text h2 a:focus{
+    color:#11a3e0;
 }
 
 .team-item-text p{
@@ -2195,6 +2219,10 @@ footer p {
     font-family: 'Open Sans', sans-serif;
     text-align: left;
     line-height: 1.5;
+}
+
+.services-main .col-md-4.col-sm-4.col-xs-12:nth-child(3n+1){
+    clear: both;
 }
 
 .service-list{
@@ -3703,6 +3731,141 @@ article.no-border-art{
     margin-top: -62px;
     right: 92px;
 }
+
+
+
+/** Home Page **/
+
+.neck-comp-left .con-couple-cvr .con-couple-left .con-couple-left-img {
+    position: absolute;
+    right: -50px;
+    width: 280px;
+}
+
+.neck-comp-left .con-couple-left-list, .neck-comp-left .con-couple-right-list {
+    float: left;
+    width: 60%;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-img {
+    position: absolute;
+    left: -50px;
+    width: 210px;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-left .con-couple-left-list ul li:first-child {
+    margin-left: 87px;
+    margin-top: 20px;
+}
+
+.neck-comp-left .con-couple-left-list ul li .con-list-text, .neck-comp-left .con-couple-right-list ul li .con-list-text {
+    width: 68%;
+    padding-left: 15px;
+    padding-top: 0;
+    text-transform: uppercase;
+}
+
+.neck-comp-left .con-couple-left-list ul li .con-list-text a{
+    float: left;
+    margin-top: 50px;
+    margin-left: -11px;
+    font-size: 12px;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-left .con-couple-left-list ul li:nth-child(2) {
+    margin-left: 18px;
+    margin-top: 12px;
+}
+
+.neck-comp-left .con-couple-left-list ul li:nth-child(2) .con-list-text a{
+    margin-top: 40px;
+    margin-left: -17px;
+}
+
+
+.neck-comp-left .con-couple-cvr .con-couple-left-list ul li:nth-child(3) {
+    margin-left: 17px;
+    margin-top: 35px;
+    z-index: 15;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-left-list ul li:nth-child(4) {
+    margin-left: 30px;
+    margin-top: 5px;
+    z-index: 16;
+}
+
+.neck-comp-left .con-couple-left-list ul li:nth-child(5) {
+    margin-left: 35px;
+    margin-top: 5px;
+}
+
+.neck-comp-left  .con-couple-left-list ul li:nth-child(6) {
+    margin-left: 75px;
+    margin-top: 63px;
+}
+
+.neck-comp-left  .con-couple-left-list ul li:nth-child(7) {
+    margin-left: 89px;
+    margin-top: 77px;
+}
+
+
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:first-child{
+    margin-left: 34px;
+    margin-top: 10px;
+}
+
+.neck-comp-left .con-couple-right-list ul li .con-list-text {
+    padding-top: 40px;
+    float: left;
+    margin-left: -40px;
+}
+
+.neck-comp-left .con-couple-right-list ul li .con-list-text a{
+        font-size: 12px;
+    float: right;
+    margin-right: -10px;
+}
+
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:nth-child(2) {
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:nth-child(3) {
+    margin-left: 172px;
+    margin-top: 16px;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:nth-child(4) {
+    margin-left: 111px;
+    margin-top: 30px;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:nth-child(5) {
+    margin-left: 81px;
+    margin-top: 20px;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:nth-child(6) {
+    margin-left: 42px;
+    margin-top: 32px;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:nth-child(7) {
+    margin-left: 100px;
+    margin-top: 10px;
+    z-index: 15;
+}
+
+.neck-comp-left .con-couple-cvr .con-couple-right .con-couple-right-list ul li:nth-child(8) {
+    margin-left: 65px;
+    margin-top: 24px;
+}
+
 
 
 

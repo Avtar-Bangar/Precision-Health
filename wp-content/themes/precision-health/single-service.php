@@ -45,7 +45,7 @@ global $post;?>
 							   'post_type' => 'service',
 							   'tax_query' => array(
 								   array(
-								   'taxonomy' => 'SCatagory',
+								   'taxonomy' => 'service-catagory',
 								   'field' => 'name',
 								   'terms' => array($name[0]))
 							   ),

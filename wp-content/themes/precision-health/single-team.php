@@ -26,7 +26,7 @@ get_header(); ?>
 	<?php global $post; ?>
 	 <div class="team-member-main">
         <div class="container">
-            <h1>member</h1>
+            <h1>profiles of the staff</h1>
             
             <div class="row">
                 

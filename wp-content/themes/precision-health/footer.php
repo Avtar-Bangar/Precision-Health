@@ -16,15 +16,21 @@
                 <div class="col-md-3 col-sm-4 col-xs-12">
                     <div class="footer-about">
                         <h5>About</h5>
-                        <p>Welcome to Precision Health Spine and Sports Clinic and congratulations for taking the first step towards better health!</p>
-                        <p>At Precision Health Spine and Sports Clinic our passion is to provide complete patient-focused treatment and management. That is why we provide manual therapies like Chiropractic and Physiotherapy alongside complimentary services such as Acupuncture, Dietetics and Nutrition, Remedial Massage and Podiatry.</p>
+						<?php
+							$include = get_pages('include=83');
+							$content = apply_filters('the_content',$include[0]->post_content);
+							echo $content;
+						?>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-md-offset-1 col-sm-4 col-xs-12">
                     <div class="footer-newsltr">
                         <div class="footer-logo">
-                            <a href="#"><img src="<?php echo esc_url(get_template_directory_uri());?>/images/footer-logo.png" class="img-responsive"></a>
+						<?php	$image=get_post_meta(9,"footer-logo",true);
+						$thumb = wp_get_attachment_image_src($image, 'full' );
+						?>
+                            <a href="<?php echo site_url(); ?>"><img src="<?php echo $url = $thumb['0'];?>" class="img-responsive"></a>
                         </div>
                         <div class="footer-social">
                             <ul>
@@ -55,15 +61,30 @@
                     <div class="footer-links">
                         <h5>Important Links</h5>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">New Patients</a></li>
-                            <li><a href="#">Conditions Treated</a></li>
-                            <li><a href="#">Affiliations</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Online Store</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            
+							<?php
+
+							$defaults = array(
+							'theme_location'  => '',
+							'menu'            => 'footer-menu',
+							'container'       => '',
+							'container_class' => '',
+							'container_id'    => '',
+							'menu_class'      => 'menu',
+							'menu_id'         => '',
+							'echo'            => true,
+							'fallback_cb'     => 'wp_page_menu',
+							'before'          => '',
+							'after'           => '',
+							'link_before'     => '',
+							'link_after'      => '',
+							'items_wrap'      => '%3$s',
+							'depth'           => 0,
+							'walker'          => ''
+							);
+							wp_nav_menu( $defaults );
+							?> 
+							
                         </ul>
                     </div>
                 </div>
@@ -138,9 +159,9 @@
     </script>
 	
  <script>
-        $(document).ready(function () {
+        jQuery(document).ready(function () {
 
-            var owl1 = $("#owl-demo-affi");
+            var owl1 = jQuery("#owl-demo-affi");
            
             owl1.owlCarousel({
                 items: 4, //10 items above 1000px browser width
@@ -156,11 +177,11 @@
             });
 
             // Custom Navigation Events
-            $(".next").click(function () {
+            jQuery(".next").click(function () {
                 owl.trigger('owl.next');
                 owl1.trigger('owl.next');
             })
-            $(".prev").click(function () {
+            jQuery(".prev").click(function () {
                 owl.trigger('owl.prev');
                 owl1.trigger('owl.prev');
             })
@@ -171,7 +192,7 @@
 	
 	<script type="text/javascript">
         if (navigator.userAgent.match(/Trident\/7\./)) { // if IE
-            $('body').on("mousewheel", function () {
+            jQuery('body').on("mousewheel", function () {
                 // remove default behavior
                 event.preventDefault();
 
@@ -188,6 +209,13 @@
         new WOW().init();
     </script>
     <script src="<?php echo esc_url(get_template_directory_uri());?>/js/bootstrap.min.js"></script>
+	
+	<script>
+	
+		jQuery( "ul li ul" ).addClass( "dropdown-menu" );
+		jQuery( "#menu-item-345" ).addClass( "dropdown" );
+		jQuery('#menu-item-345').append('<span class="caret dropdown-toggle" data-toggle="dropdown"></span>')
+	</script>
 </body>
 
 </html>

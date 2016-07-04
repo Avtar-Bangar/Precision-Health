@@ -504,10 +504,10 @@ function create_faq_taxonomies() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'Catagory' ),
+		'rewrite'           => array( 'slug' => 'faqs-catagory' ),
 	);
 
-	register_taxonomy( 'Catagory', faq, $args );
+	register_taxonomy( 'faqs-catagory', faq, $args );
 }
 
 /*********** affilation custom post  ************/
@@ -661,10 +661,10 @@ function create_Service_taxonomies() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'SCatagory' ),
+		'rewrite'           => array( 'slug' => 'service-catagory' ),
 	);
 
-	register_taxonomy( 'SCatagory', service, $args );
+	register_taxonomy( 'service-catagory', service, $args );
 }
 
 /*      modality custom post         */
@@ -779,8 +779,8 @@ function create_ConditionsTreated_taxonomies() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'CTCatagory' ),
+		'rewrite'           => array( 'slug' => 'conditions-treated-catagory' ),
 	);
 
-	register_taxonomy( 'CTCatagory', ctreated, $args );
+	register_taxonomy( 'conditions-treated-catagory', ctreated, $args );
 }

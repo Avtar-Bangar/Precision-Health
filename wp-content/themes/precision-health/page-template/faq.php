@@ -30,7 +30,7 @@ get_header();?>
 				$args = array(
 					'type'                     => 'faq',
 					'orderby'                  => 'term_id',
-					'taxonomy'                 => 'Catagory',
+					'taxonomy'                 => 'faqs-catagory',
 					);
 				$categories = get_categories( $args );
 				$cat=1;

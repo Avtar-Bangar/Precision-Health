@@ -65,7 +65,7 @@
             </div>
 
         </div>
-    </div>
+ </div>
 
 
     <div class="container">
@@ -265,7 +265,7 @@ Team</h1>
 
     </div>
 
-    <div class="container">
+<div class="container">
         <div class="blog-cvr">
             <div class="blog-heading">
                 <div class="blog-heading-left">
@@ -428,4 +428,5 @@ Dummy text</h1>
             </div>
 
         </div>
+	</div>
 <?php get_footer(); ?>

@@ -31,7 +31,7 @@
 				$args = array(
 					'type'                     => 'faq',
 					'orderby'                  => 'term_id',
-					'taxonomy'                 => 'SCatagory',
+					'taxonomy'                 => 'service-catagory',
 					);
 				$categories = get_categories( $args );
 				foreach ( $categories as $category ) {	

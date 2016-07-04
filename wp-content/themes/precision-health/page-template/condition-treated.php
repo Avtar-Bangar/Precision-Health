@@ -1,7 +1,9 @@
 <?php
 /* Template Name: condition-treated */
 ?>
-<?php get_header(); ?>
+<?php get_header(); 
+global $category;
+?>
  <?php	$image=get_post_meta(9,"banner-inner",true);
 		$thumb = wp_get_attachment_image_src($image, 'banner-inner' );
 	  ?>
@@ -35,23 +37,25 @@
 								$args = array(
 									'type'                     => 'ctreated',
 									'orderby'                  => 'term_id',
-									'taxonomy'                 => 'CTCatagory',
+									'taxonomy'                 => 'conditions-treated-catagory',
 									);
 								$categories = get_categories( $args );
-								$time = 1.4;
+								$time1 = 1.4;
+								$count=1;
 								foreach ( $categories as $category ) {
 									
-								?>
-						
-                            <li class="wow fadeInDown" data-wow-duration="<?php echo $time; ?>s">
+								
+							if($count <=7) {?>
+                            <li class="wow fadeInDown" data-wow-duration="<?php echo $time1; ?>s">
                                 <div class="con-list-img">
-								<a href="#"><img src="<?php echo z_taxonomy_image_url($category->term_id); ?>" class="img-responsive"></a></div>
+								<a href="<?php echo get_category_link( $category->term_id )?>"><img src="<?php echo z_taxonomy_image_url($category->term_id); ?>" class="img-responsive"></a></div>
                                 <div class="con-list-text">
-                                    <a href="#"><?php echo $name = $category->name ?></a>
+                                   <a href="<?php echo get_category_link( $category->term_id )?>"><?php echo $name = $category->name ?></a>
                                 </div>
 
                             </li> 
-								<?php $time = $time+0.2; } ?> 
+							<?php $time1 = $time1+0.2; } $count++; 
+							} ?> 
                            
                         </ul>
                     </div>
@@ -71,21 +75,30 @@
 								$args = array(
 									'type'                     => 'ctreated',
 									'orderby'                  => 'term_id',
-									'taxonomy'                 => 'CTCatagory',
+									'taxonomy'                 => 'conditions-treated-catagory',
 									);
-								$rightside = get_categories( $args );
+								$categories = get_categories( $args );
 								$time = 1.4;
-								foreach ( $rightside as $right ) {
+								$count=1;
+								foreach ( $categories as $category ) {
 									
-								?>
+								
+								if($count >7) {?>
                             <li class="wow fadeInDown" data-wow-duration="<?php echo $time; ?>s">
                                 <div class="con-list-text">
-                                    <a href="#"><?php echo $name = $right->name ?></a>
+                                    <a href="<?php echo get_category_link( $category->term_id )?>"><?php echo $name = $category->name; 
+									if($name == 'Back Pain'){ 
+									echo '<strong>(Thoracic Spine Pain)</strong>';
+									 } 
+									 if($name == 'Lower Back Pain'){ 
+									echo '<strong>(LUMBAR SPINE PAIN )</strong>';
+									 }?>
+									</a>
                                 </div>
-                                <div class="con-list-img"><a href="#"><img src="<?php echo z_taxonomy_image_url($right->term_id); ?>" class="img-responsive"></a></div>
+                                <div class="con-list-img"><a href="<?php echo get_category_link( $category->term_id )?>"><img src="<?php echo z_taxonomy_image_url($category->term_id); ?>" class="img-responsive"></a></div>
 
                             </li>
-								<?php $time = $time = 0.2; } ?>
+								<?php $time = $time + 0.2; } $count++;  } ?>
 							
 						</ul>
                     </div>
@@ -108,11 +121,6 @@
 
 
 </div>
-	
-	
-	
-	
-	
 	
 	
 	

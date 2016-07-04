@@ -20,7 +20,7 @@
     <div class="about-main  wow fadeInUp" data-wow-duration="2s">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="about-main-text">
                         <h1>ABOUT US</h1>
                         <h5><?php the_field('heading-after-aboutus',83); ?></h5>
